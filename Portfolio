@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Aditya Koshta - Portfolio</title>
+</head>
+<body>
+
+  <!-- Top heading / name -->
+  <h1>Aditya Koshta</h1>
+  <p>Engineering Student & Developer</p>
+  <hr>
+
+  <!-- About section -->
+  <h2>About Me</h2>
+  <p>
+    Hello, I am Aditya Koshta, an engineering student from SIT Nagpur.
+    I am interested in web development, artificial intelligence, drones,
+    and agriculture technology.
+  </p>
+
+  <!-- Projects section -->
+  <h2>Projects</h2>
+
+  <h3>Portfolio Website</h3>
+  <p>A simple personal portfolio website created using basic HTML.</p>
+
+  <h3>AI / ML Project</h3>
+  <p>A basic machine learning project to learn prediction or classification.</p>
+
+  <h3>Engineering / IoT Experiment</h3>
+  <p>A small idea or prototype related to drones or agriculture tech.</p>
+
+  <!-- Skills section -->
+  <h2>Skills</h2>
+  <ul>
+    <li>C (programming language)</li>
+    <li>HTML and CSS (basic web pages)</li>
+    <li>Git and GitHub (basic version control)</li>
+    <li>Interest in AI, ML, drones, and problem solving</li>
+  </ul>
+
+  <!-- Contact section -->
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:adityakoshta2007@gmail.com">adityakoshta2007@gmail.com</a></p>
+  <p>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
+  <p>LinkedIn: <a href="https://linkedin.com/in/yourusername">linkedin.com/in/yourusername</a></p>
+
+  <!-- Footer -->
+  <hr>
+  <p>&copy; 2026 Aditya Koshta</p>
+
+</body>
+</html>
