@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Travel Log – Travel Blog</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    body { background: #f5f5f7; color: #1d1d1f; line-height: 1.7; }
+
+    /* Navigation – Apple style */
+    header { background: rgba(255,255,255,0.8); backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #ddd; }
+    nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; }
+    nav h1 { font-weight: 600; }
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav ul li a { color: #1d1d1f; text-decoration: none; font-size: 15px; }
+    nav ul li a:hover { opacity: 0.7; }
+
+    /* Hero */
+    .hero { height: 360px; display: flex; align-items: center; justify-content: center; text-align: center; background: radial-gradient(circle at top, #ffffff, #e5e5ea); }
+    .hero h2 { font-size: 42px; font-weight: 600; }
+
+    /* Layout */
+    .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; display: grid; grid-template-columns: 3fr 1fr; gap: 40px; }
+
+    /* Apple bubble cards */
+    .post {
+      background: rgba(255,255,255,0.9);
+      border-radius: 28px;
+      padding: 28px;
+      margin-bottom: 40px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .post:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+    }
+    .post img { width: 100%; border-radius: 22px; margin-bottom: 20px; }
+    .post h3 { margin-bottom: 14px; font-size: 26px; }
+
+    /* Sidebar – bubble */
+    .sidebar {
+      background: rgba(255,255,255,0.9);
+      padding: 26px;
+      border-radius: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      height: fit-content;
+    }
+    .sidebar h3 { margin-bottom: 18px; font-size: 20px; }
+    .sidebar ul { list-style: none; }
+    .sidebar ul li { margin-bottom: 12px; }
+    .sidebar ul li a { text-decoration: none; color: #0071e3; font-weight: 500; }
+
+    /* Footer */
+    footer { text-align: center; padding: 30px; color: #6e6e73; }
+
+    @media (max-width: 768px) {
+      .container { grid-template-columns: 1fr; }
+      .hero h2 { font-size: 32px; }
+      nav ul { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <h1>The Travel Log</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#india">India</a></li>
+      <li><a href="#france">France</a></li>
+      <li><a href="#japan">Japan</a></li>
+      <li><a href="#australia">Australia</a></li>
+      <li><a href="#usa">USA</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h2>Explore 5 Beautiful Countries 🌍<br>Travel Stories & Guides</h2>
+</section>
+
+<main class="container">
+  <section>
+    <!-- INDIA -->
+    <article class="post" id="india">
+      <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da" alt="India" />
+      <h3>Incredible India 🇮🇳</h3>
+      <p>India is one of the most diverse travel destinations in the world, offering a rich blend of culture, history, and traditions. The country is home to ancient monuments like the Taj Mahal, majestic forts of Rajasthan, and spiritual cities such as Varanasi. Nature lovers can enjoy the Himalayas, lush forests, and serene backwaters of Kerala. Indian festivals like Diwali and Holi add vibrant colors to the travel experience. Each state has its own language, food, and customs, making every journey unique. Indian cuisine is famous worldwide for its spices and flavors. Traveling through India is truly a journey of discovery and learning.</p>
+      <iframe src="https://www.google.com/maps?q=India&output=embed" width="100%" height="260" style="border:0;border-radius:20px;margin-top:18px;" loading="lazy"></iframe>
+    </article>
+
+    <!-- FRANCE -->
+    <article class="post" id="france">
+      <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" alt="France" />
+      <h3>Romantic France 🇫🇷</h3>
+      <p>France is known as one of the most romantic and culturally rich countries in the world. Paris, the capital city, is famous for landmarks such as the Eiffel Tower and Louvre Museum. France is also popular for its fashion, art, and world-class cuisine. Travelers can explore beautiful countryside regions like Provence and Bordeaux. The French Riviera offers stunning beaches and luxury experiences. French food, including cheese, wine, and pastries, attracts food lovers globally. A visit to France combines elegance, history, and unforgettable experiences.</p>
+      <iframe src="https://www.google.com/maps?q=France&output=embed" width="100%" height="260" style="border:0;border-radius:20px;margin-top:18px;" loading="lazy"></iframe>
+    </article>
+
+    <!-- JAPAN -->
+    <article class="post" id="japan">
+      <img src="https://images.unsplash.com/photo-1549693578-d683be217e58" alt="Japan" />
+      <h3>Beautiful Japan 🇯🇵</h3>
+      <p>Japan is a fascinating country where ancient traditions meet modern technology. Visitors can experience peaceful temples, traditional tea ceremonies, and historic shrines. During spring, cherry blossoms create breathtaking scenery across the country. Cities like Tokyo and Osaka showcase advanced technology and vibrant city life. Japanese culture values discipline, respect, and cleanliness. The country is also famous for its delicious cuisine such as sushi, ramen, and tempura. Traveling to Japan offers a perfect balance of tradition, innovation, and natural beauty.</p>
+      <iframe src="https://www.google.com/maps?q=Japan&output=embed" width="100%" height="260" style="border:0;border-radius:20px;margin-top:18px;" loading="lazy"></iframe>
+    </article>
+
+    <!-- AUSTRALIA -->
+    <article class="post" id="australia">
+      <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9" alt="Australia" />
+      <h3>Adventurous Australia 🇦🇺</h3>
+      <p>Australia is a dream destination for adventure and nature lovers. The country is famous for its unique wildlife such as kangaroos and koalas. Tourists can explore the Great Barrier Reef, one of the world’s largest coral reef systems. Cities like Sydney and Melbourne offer modern architecture and vibrant culture. Australia also has beautiful beaches perfect for surfing and relaxation. Road trips along the coastline provide unforgettable views. Visiting Australia promises excitement, natural wonders, and outdoor adventures.</p>
+      <iframe src="https://www.google.com/maps?q=Australia&output=embed" width="100%" height="260" style="border:0;border-radius:20px;margin-top:18px;" loading="lazy"></iframe>
+    </article>
+
+    <!-- USA -->
+    <article class="post" id="usa">
+      <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29" alt="USA" />
+      <h3>United States of America 🇺🇸</h3>
+      <p>The United States of America is known for its vast size and cultural diversity. It offers world-famous cities such as New York, Los Angeles, and Chicago. Nature lovers can visit national parks like Yellowstone and the Grand Canyon. The USA is also a global center for entertainment, technology, and education. American culture is influenced by people from all over the world. Tourists enjoy shopping, theme parks, and music festivals. Traveling across the USA provides a wide range of experiences in a single country.</p>
+      <iframe src="https://www.google.com/maps?q=United%20States%20of%20America&output=embed" width="100%" height="260" style="border:0;border-radius:20px;margin-top:18px;" loading="lazy"></iframe>
+    </article>
+  </section>
+
+  <aside class="sidebar">
+    <h3>Quick Navigation</h3>
+    <ul>
+      <li><a href="#india">India</a></li>
+      <li><a href="#france">France</a></li>
+      <li><a href="#japan">Japan</a></li>
+      <li><a href="#australia">Australia</a></li>
+      <li><a href="#usa">USA</a></li>
+    </ul>
+  </aside>
+</main>
+
+<footer>
+  <p>© 2026 The Travel Log | College Project Ready</p>
+</footer>
+
+</body>
+</html>
