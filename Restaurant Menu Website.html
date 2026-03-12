@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpiceVilla - Order Online</title>
+
+  <style>
+    /* ... (Keeping your original styles) ... */
+    body { font-family: Arial, sans-serif; background-color: #fff8f0; margin: 0; color: #333; padding-bottom: 100px; }
+    .hero { background: linear-gradient(to right, #b71c1c, #e53935); color: white; text-align: center; padding: 40px; }
+    .menu-section { padding: 30px; }
+    .menu-section h2 { text-align: center; color: #b71c1c; }
+    table { width: 90%; margin: auto; border-collapse: collapse; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    th { background-color: #f57c00; color: white; padding: 12px; }
+    td { padding: 12px; text-align: center; border-bottom: 1px solid #ddd; }
+    .price { color: #2e7d32; font-weight: bold; }
+
+    /* New Styles for Cart */
+    .add-btn {
+      background-color: #f57c00;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .add-btn:hover { background-color: #b71c1c; }
+
+    .cart-container {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #3e2723;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
+      box-sizing: border-box;
+      z-index: 1000;
+    }
+
+    .order-btn {
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .order-btn:disabled { background-color: #777; cursor: not-allowed; }
+
+    .cart-info p { margin: 5px 0; }
+    #cart-items-count { font-weight: bold; color: #ffcc80; }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+    <h1>SpiceVilla</h1>
+    <p>Taste of India - Order Now</p>
+  </header>
+
+  <section class="menu-section">
+    <h2>Appetizers</h2>
+    <table>
+      <tr><th>Item</th><th>Description</th><th>Price</th><th>Action</th></tr>
+      <tr>
+        <td>Paneer Tikka</td><td>Grilled cottage cheese</td><td class="price">₹220</td>
+        <td><button class="add-btn" onclick="addToCart('Paneer Tikka', 220)">Add to Cart</button></td>
+      </tr>
+      <tr>
+        <td>Veg Manchurian</td><td>Indo-Chinese balls</td><td class="price">₹190</td>
+        <td><button class="add-btn" onclick="addToCart('Veg Manchurian', 190)">Add to Cart</button></td>
+      </tr>
+      <tr>
+        <td>Chicken 65</td><td>Spicy fried chicken</td><td class="price">₹260</td>
+        <td><button class="add-btn" onclick="addToCart('Chicken 65', 260)">Add to Cart</button></td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="menu-section">
+    <h2>Main Course</h2>
+    <table>
+      <tr><th>Item</th><th>Description</th><th>Price</th><th>Action</th></tr>
+      <tr>
+        <td>Butter Chicken</td><td>Rich tomato gravy</td><td class="price">₹320</td>
+        <td><button class="add-btn" onclick="addToCart('Butter Chicken', 320)">Add to Cart</button></td>
+      </tr>
+      <tr>
+        <td>Dal Tadka</td><td>Yellow lentils</td><td class="price">₹180</td>
+        <td><button class="add-btn" onclick="addToCart('Dal Tadka', 180)">Add to Cart</button></td>
+      </tr>
+      <tr>
+        <td>Veg Biryani</td><td>Aromatic rice</td><td class="price">₹220</td>
+        <td><button class="add-btn" onclick="addToCart('Veg Biryani', 220)">Add to Cart</button></td>
+      </tr>
+    </table>
+  </section>
+
+  <div class="cart-container">
+    <div class="cart-info">
+      <p>Items in Cart: <span id="cart-items-count">0</span></p>
+      <p>Total Price: <span id="total-price">₹0</span></p>
+    </div>
+    <button class="order-btn" id="place-order-btn" onclick="placeOrder()" disabled>Place Order</button>
+  </div>
+
+  <script>
+    let cart = [];
+    let total = 0;
+
+    function addToCart(itemName, price) {
+      cart.push({ name: itemName, price: price });
+      total += price;
+      updateUI();
+    }
+
+    function updateUI() {
+      document.getElementById('cart-items-count').innerText = cart.length;
+      document.getElementById('total-price').innerText = "₹" + total;
+      
+      const orderBtn = document.getElementById('place-order-btn');
+      if (cart.length > 0) {
+        orderBtn.disabled = false;
+      }
+    }
+
+    function placeOrder() {
+      alert("Order Placed Successfully!\nTotal Amount: ₹" + total + "\nThank you for ordering from SpiceVilla!");
+      // Reset cart
+      cart = [];
+      total = 0;
+      updateUI();
+      document.getElementById('place-order-btn').disabled = true;
+    }
+  </script>
+
+</body>
+</html>
