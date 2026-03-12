@@ -1,0 +1,119 @@
+<form action="#">
+    <div class="row">
+        <div class="input-group">
+            <label>First Name</label>
+            <input type="text" placeholder="John" required>
+        </div>
+        <div class="input-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Doe" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-group">
+            <label>Institutional Email</label>
+            <input type="email" placeholder="name@university.edu" required>
+        </div>
+        <div class="input-group">
+            <label>Phone Number</label>
+            <input type="text" placeholder="+91 98765 43210" required>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <label>College / University</label>
+        <input type="text" placeholder="SIT College of Engineering" required>
+    </div>
+
+    <div class="row">
+        <div class="input-group">
+            <label>Department</label>
+            <select required>
+                <option value="" disabled selected>Select department</option>
+                <option>Computer Science</option>
+                <option>Information Technology</option>
+                <option>Electronics & Communication</option>
+                <option>Mechanical Engineering</option>
+                <option>Civil Engineering</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label>Year of Study</label>
+            <select required>
+                <option value="" disabled selected>Select year</option>
+                <option>1st Year</option>
+                <option>2nd Year</option>
+                <option>3rd Year</option>
+                <option>4th Year</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <label>Student ID / Roll Number</label>
+        <input type="text" placeholder="SIT2026CS045" required>
+    </div>
+
+    <div class="input-group">
+        <label>Innovation Track</label>
+        <select required>
+            <option value="" disabled selected>Select your field...</option>
+            <option>Artificial Intelligence & Robotics</option>
+            <option>Quantum Computing</option>
+            <option>Green Tech & Sustainability</option>
+            <option>Cyber Security</option>
+            <option>IoT & Smart Systems</option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label>Workshop Interests</label>
+        <div class="radio-flex">
+            <label class="radio-option">
+                <input type="checkbox"> Hackathon
+            </label>
+            <label class="radio-option">
+                <input type="checkbox"> Startup Bootcamp
+            </label>
+            <label class="radio-option">
+                <input type="checkbox"> AI Hands-on Lab
+            </label>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <label>Attendance Mode</label>
+        <div class="radio-flex">
+            <label class="radio-option">
+                <input type="radio" name="mode" checked> Physical (On-site)
+            </label>
+            <label class="radio-option">
+                <input type="radio" name="mode"> Virtual (Remote)
+            </label>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <label>Dietary Preference</label>
+        <select>
+            <option>No Preference</option>
+            <option>Vegetarian</option>
+            <option>Vegan</option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label>Project Abstract (Optional)</label>
+        <textarea rows="4" placeholder="Briefly describe your innovation..."></textarea>
+    </div>
+
+    <div class="input-group">
+        <label class="radio-option">
+            <input type="checkbox" required>
+            I confirm that the information provided is accurate and agree to the event guidelines.
+        </label>
+    </div>
+
+    <button type="submit" class="submit-btn">Initialize Registration</button>
+</form>
