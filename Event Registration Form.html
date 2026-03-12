@@ -1,119 +1,272 @@
-<form action="#">
-    <div class="row">
-        <div class="input-group">
-            <label>First Name</label>
-            <input type="text" placeholder="John" required>
-        </div>
-        <div class="input-group">
-            <label>Last Name</label>
-            <input type="text" placeholder="Doe" required>
-        </div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+    <style>
+        /* --- CSS Styles --- */
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f4f7f6;
+            --text-dark: #333;
+            --text-light: #666;
+            --border-color: #ddd;
+            --success-color: #28a745;
+        }
 
-    <div class="row">
-        <div class="input-group">
-            <label>Institutional Email</label>
-            <input type="email" placeholder="name@university.edu" required>
-        </div>
-        <div class="input-group">
-            <label>Phone Number</label>
-            <input type="text" placeholder="+91 98765 43210" required>
-        </div>
-    </div>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    <div class="input-group">
-        <label>College / University</label>
-        <input type="text" placeholder="SIT College of Engineering" required>
-    </div>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            padding: 20px;
+        }
 
-    <div class="row">
-        <div class="input-group">
-            <label>Department</label>
-            <select required>
-                <option value="" disabled selected>Select department</option>
-                <option>Computer Science</option>
-                <option>Information Technology</option>
-                <option>Electronics & Communication</option>
-                <option>Mechanical Engineering</option>
-                <option>Civil Engineering</option>
-            </select>
-        </div>
-        <div class="input-group">
-            <label>Year of Study</label>
-            <select required>
-                <option value="" disabled selected>Select year</option>
-                <option>1st Year</option>
-                <option>2nd Year</option>
-                <option>3rd Year</option>
-                <option>4th Year</option>
-            </select>
-        </div>
-    </div>
+        .container {
+            max-width: 700px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
 
-    <div class="input-group">
-        <label>Student ID / Roll Number</label>
-        <input type="text" placeholder="SIT2026CS045" required>
-    </div>
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+        }
 
-    <div class="input-group">
-        <label>Innovation Track</label>
-        <select required>
-            <option value="" disabled selected>Select your field...</option>
-            <option>Artificial Intelligence & Robotics</option>
-            <option>Quantum Computing</option>
-            <option>Green Tech & Sustainability</option>
-            <option>Cyber Security</option>
-            <option>IoT & Smart Systems</option>
-        </select>
-    </div>
+        /* Form Sections */
+        fieldset {
+            border: none;
+            padding: 0;
+            margin: 0 0 25px 0;
+        }
 
-    <div class="input-group">
-        <label>Workshop Interests</label>
-        <div class="radio-flex">
-            <label class="radio-option">
-                <input type="checkbox"> Hackathon
-            </label>
-            <label class="radio-option">
-                <input type="checkbox"> Startup Bootcamp
-            </label>
-            <label class="radio-option">
-                <input type="checkbox"> AI Hands-on Lab
-            </label>
-        </div>
-    </div>
+        legend {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            width: 100%;
+            padding-bottom: 5px;
+        }
 
-    <div class="input-group">
-        <label>Attendance Mode</label>
-        <div class="radio-flex">
-            <label class="radio-option">
-                <input type="radio" name="mode" checked> Physical (On-site)
-            </label>
-            <label class="radio-option">
-                <input type="radio" name="mode"> Virtual (Remote)
-            </label>
-        </div>
-    </div>
+        /* Form Groups & Labels */
+        .form-group {
+            margin-bottom: 18px;
+        }
 
-    <div class="input-group">
-        <label>Dietary Preference</label>
-        <select>
-            <option>No Preference</option>
-            <option>Vegetarian</option>
-            <option>Vegan</option>
-        </select>
-    </div>
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
 
-    <div class="input-group">
-        <label>Project Abstract (Optional)</label>
-        <textarea rows="4" placeholder="Briefly describe your innovation..."></textarea>
-    </div>
+        .required-marker {
+            color: #e74c3c;
+            margin-left: 3px;
+        }
 
-    <div class="input-group">
-        <label class="radio-option">
-            <input type="checkbox" required>
-            I confirm that the information provided is accurate and agree to the event guidelines.
-        </label>
-    </div>
+        /* Inputs, Selects, Textareas */
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 15px;
+            transition: border-color 0.3s;
+        }
 
-    <button type="submit" class="submit-btn">Initialize Registration</button>
-</form>
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        textarea {
+            resize: vertical;
+            height: 80px;
+        }
+
+        /* Flex Row for side-by-side inputs (Name fields) */
+        .form-row {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .form-row .form-group {
+            flex: 1; /* Take available space */
+            min-width: 250px; /* Don't get too small on mobile */
+        }
+
+        /* Radio & Checkbox Styling Styles */
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding-top: 5px;
+        }
+
+        .radio-label, .checkbox-label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 8px;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary-color); /* Modern browser styling */
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #357abd;
+        }
+        
+        .helper-text {
+            font-size: 0.9em;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body style="background-color:#c8f7e4;">
+
+<div class="container">
+    <h1>Registration Form </h1>
+    
+    <form action="#" method="POST">
+        
+        <fieldset>
+            <legend>Information</legend>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name<span class="required-marker">*</span></label>
+                    <input type="text" id="firstName" name="firstName" required placeholder="Jane">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name<span class="required-marker">*</span></label>
+                    <input type="text" id="lastName" name="lastName" required placeholder="Doe">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address<span class="required-marker">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="jane.doe@example.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Event Options</legend>
+
+            <div class="form-group">
+                <label for="ticketType">Select Ticket Type<span class="required-marker">*</span></label>
+                <select id="ticketType" name="ticketType" required>
+                    <option value="" disabled selected>-- Choose an option --</option>
+                    <option value="general">General Admission ($50)</option>
+                    <option value="vip">VIP Access ($150)</option>
+                    <option value="student">Student ($25)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Choose Add-on Workshops (Optional):</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="workshops" value="networking"> Networking 101
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="workshops" value="leadership"> Leadership Panel
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="workshops" value="coding"> Intro to Coding
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Preferences & Extras</legend>
+
+             <div class="form-group">
+                <label>Dietary Preference For Lunch<span class="required-marker">*</span></label>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="dietary" value="none" checked> No Restrictions
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="dietary" value="vegetarian"> Vegetarian
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="dietary" value="vegan"> Vegan
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="dietary" value="glutenfree"> Gluten-Free
+                    </label>
+                </div>
+            </div>
+
+             <div class="form-group">
+                <label for="tshirtSize">T-Shirt Size (Free Swag!)</label>
+                <select id="tshirtSize" name="tshirtSize">
+                    <option value="s">Small</option>
+                    <option value="m" selected>Medium</option>
+                    <option value="l">Large</option>
+                    <option value="xl">XL</option>
+                    <option value="xxl">XXL</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="comments">Special Requests or Accessibility Needs:</label>
+                <textarea id="comments" name="comments" placeholder="Let us know how we can help..."></textarea>
+                <p class="helper-text">We will do our best to accommodate your needs.</p>
+            </div>
+        </fieldset>
+
+        <button type="submit" class="submit-btn">Complete Registration</button>
+
+    </form>
+</div>
+
+</body>
+</html>
